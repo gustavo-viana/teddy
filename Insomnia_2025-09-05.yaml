@@ -1,0 +1,253 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1757074214454
+  modified: 1757074214454
+  description: ""
+collection:
+  - name: Desafio Teddy
+    meta:
+      id: fld_55d39db7562048ae804c93ddc91e084b
+      created: 1757095099483
+      modified: 1757095099482
+      sortKey: -1757095099483
+      description: ""
+    children:
+      - url: "{{ _.url }}/urls/delete-url"
+        name: Delete Url
+        meta:
+          id: req_01c877962ead4bf1b1eed0bd5a6d1ccf
+          created: 1757095101730
+          modified: 1757096402080
+          isPrivate: false
+          description: ""
+          sortKey: -1757095101730
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "id_url": "dcb7ea67-15ad-4503-b3be-825ebbf80ace"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_f65d34cf8a184e38a05ab9053ef61af4
+          - name: User-Agent
+            value: insomnia/11.5.0
+            id: pair_6417940ea33443fcb9f5b01da9c04e32
+          - id: pair_69ab277b26d942daa869a9150451ca9b
+            name: Authorization
+            value: Bearer {{ _.token }}
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/urls/update-url"
+        name: Atualiza URL
+        meta:
+          id: req_013cbfcc982148d2bd056575e74dd626
+          created: 1757095104419
+          modified: 1757096373417
+          isPrivate: false
+          description: ""
+          sortKey: -1757095104419
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "id_url": "dcb7ea67-15ad-4503-b3be-825ebbf80ace",
+              "new_url": "https://novosite.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_8fdd5507cb6d4b1fa20bf24e83d3e016
+          - name: User-Agent
+            value: insomnia/11.5.0
+            id: pair_6ec305436a674d9a99f1c5a820546520
+          - id: pair_7cfcb4025b4e4af4b4f9436915b8a926
+            name: Authorization
+            value: Bearer {{ _.token }}
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/urls/busca-urls"
+        name: Busca URL
+        meta:
+          id: req_fad36c5cccf14f7d8c837c248cc60db4
+          created: 1757095106984
+          modified: 1757096362616
+          isPrivate: false
+          description: ""
+          sortKey: -1757095106984
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.5.0
+            id: pair_4eb35d98826142ad8f2251b70cc36257
+          - id: pair_254f7ff95a8e4c94a6042a0ab90d5a63
+            name: Authorization
+            value: Bearer {{ _.token }}
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/urls/shorten"
+        name: Encurta URL
+        meta:
+          id: req_f78d525368f140f899bc60dc1cdb2172
+          created: 1757095108695
+          modified: 1757095482366
+          isPrivate: false
+          description: ""
+          sortKey: -1757095108695
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "urlToShorten": "https://www.google.com.br"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_0a9f55dee6af480cb52844cb9ee9619a
+          - name: User-Agent
+            value: insomnia/11.5.0
+            id: pair_332ad4209f2f4659a7dbba179704b4b0
+          - id: pair_fb8b4008b52c4295b6922ffcf06ba09e
+            name: Authorization
+            value: Bearer
+            description: ""
+            disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/users/sessions"
+        name: "Busca token "
+        meta:
+          id: req_3836ba7d5b804d8c94564beaa3c956f8
+          created: 1757095114327
+          modified: 1757096411716
+          isPrivate: false
+          description: ""
+          sortKey: -1757095114327
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "a@emal.com",
+            	"password": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.5.0
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/urls/{PASSE AQUI O ALIAS OU COLE A URL TODA}"
+        name: Redireciona para url original
+        meta:
+          id: req_16260a89ea45490787317f98472ff77b
+          created: 1757095116265
+          modified: 1757095339165
+          isPrivate: false
+          description: ""
+          sortKey: -1757095116265
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.5.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/users/create"
+        name: Cria Usuario
+        meta:
+          id: req_3a975c9f7c7f4596b28d1c81bb2bd82a
+          created: 1757095117691
+          modified: 1757095231946
+          isPrivate: false
+          description: ""
+          sortKey: -1757095117691
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "gustavo",
+              "email": "email@email.com",
+              "password": "13213212"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.5.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1757074244995
+    modified: 1757074244995
+environments:
+  name: Teddy
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1757074244994
+    modified: 1757096352108
+    isPrivate: false
+  data:
+    url: http://localhost:3333
+    token: "{% response 'body', 'req_3836ba7d5b804d8c94564beaa3c956f8',
+      'b64::JC50b2tlbg==::46b', 'never', 60 %}"

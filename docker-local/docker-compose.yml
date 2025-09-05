@@ -1,0 +1,15 @@
+services:
+  postgresLocal:
+    image: postgres:15
+    container_name: postgresLocal
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: appdb
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+volumes: {}
