@@ -2,17 +2,19 @@ FROM node:22.19.0
 
 WORKDIR /app
 
+# Copia dependências
 COPY package*.json ./
-RUN npm install
-
 COPY tsconfig.json ./
 COPY src ./src
-
 COPY prisma ./prisma
-RUN npx prisma generate
+COPY .env.build .env
+COPY entrypoint.sh ./entrypoint.sh
 
-# Build do TypeScript
+RUN npm install
 RUN npx tsup src --out-dir build --format cjs
 
-# CMD padrão
-CMD ["node", "build/server.js"]
+# Permite execução do entrypoint
+RUN chmod +x entrypoint.sh
+
+# ENTRYPOINT: aplica migrations e sobe servidor
+ENTRYPOINT ["./entrypoint.sh"]
